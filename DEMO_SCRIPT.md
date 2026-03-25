@@ -125,7 +125,22 @@ If OpenClaw TUI has issues, use the Streamlit app:
 uv run python main.py
 ```
 
-If Apify is slow, have a pre-scraped demo ready — the agent we already created (agent ID: `03c2baf0-c6dc-4aff-a03c-f9dad14837d7`) has docs.contextual.ai indexed and can be queried immediately.
+If Apify is slow, use a pre-scraped agent. Run this Python snippet to query directly:
+
+```python
+from contextual import ContextualAI
+client = ContextualAI()
+
+# Pre-scraped agents ready to query:
+# Contextual AI docs: 03c2baf0-c6dc-4aff-a03c-f9dad14837d7
+# Apify Python SDK:   a3e6df4d-a23e-4098-92d9-e91dea748adc
+
+response = client.agents.query.create(
+    agent_id="a3e6df4d-a23e-4098-92d9-e91dea748adc",
+    messages=[{"role": "user", "content": "How do I get started?"}],
+)
+print(response.message.content)
+```
 
 ---
 
