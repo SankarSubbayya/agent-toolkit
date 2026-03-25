@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "web-researcher": {
+      "command": "uv",
+      "args": ["run", "--project", "/Users/sankar/hackathons/agent_toolkit", "python", "/Users/sankar/hackathons/agent_toolkit/skills/web-researcher/server.py"],
+      "env": {
+        "APIFY_API_TOKEN": "${APIFY_API_TOKEN}",
+        "CONTEXTUAL_API_KEY": "${CONTEXTUAL_API_KEY}"
+      }
+    }
+  }
+}
